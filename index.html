@@ -39,7 +39,7 @@
                     <div class="dropdown">
                         <a
                             class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0"
-                            href="#"
+                            href="practiceareas.html"
                             role="button"
                             data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -104,7 +104,7 @@
             <div class="mt-5">
                 <a href="index.html" class="mobile-link">Home</a>
                 <div class="dropdown">
-                    <a class="mobile-link dropdown-toggle text-start" href="#" data-bs-toggle="dropdown">Practice Areas</a>
+                    <a class="mobile-link dropdown-toggle text-start" href="practiceareas.html" data-bs-toggle="dropdown">Practice Areas</a>
                     <ul class="dropdown-menu dropdown-menu-dark bg-dark border-0">
                         <li>
                             <a class="dropdown-item" href="./civil-lawyer.html">Civil litigation</a>
@@ -1535,4 +1535,18 @@ document.addEventListener('DOMContentLoaded', initReveal);
 initReveal();
 }
 </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Select the Practice Areas link
+    const practiceLink = document.querySelector('.dropdown-toggle[href="practiceareas.html"]');
+
+    if (practiceLink && window.innerWidth > 992) {
+        practiceLink.addEventListener('click', function(e) {
+            // Redirect to the page immediately on click
+            window.location.href = this.getAttribute('href');
+        });
+    }
+});
+</script>
+
 </html>

@@ -228,7 +228,7 @@
             .container {
                 max-width: 1400px;
                 margin: 0 auto;
-                padding: 4rem 2rem;
+                height: min-content;
             }
 
             .intro-section {
@@ -582,62 +582,121 @@
         <div class="progress-bar"></div>
 
         <!-- Header -->
-<header class="header">
-    <nav class="container d-flex align-items-center justify-content-between">
-        <a href="index.html">
-            <img src="assets/images/law3.png" alt="RRC Logo" class="logo-img">
-        </a>
-
-        <div class="d-none d-lg-flex align-items-center ms-auto">
-            <a href="index.html" class="nav-link-custom">Home</a>
-            
-            <div class="dropdown mx-3">
-                <a class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Practice Areas
+        <header class="header">
+            <nav class="container d-flex align-items-center justify-content-between">
+                <a href="index.html">
+                    <img src="assets/images/law3.png" alt="RRC Logo" class="logo-img">
                 </a>
-                <ul class="dropdown-menu shadow-lg">
-                    <li><a class="dropdown-item" href="./civil-lawyer.html">Civil litigation</a></li>
-                    <li><a class="dropdown-item" href="./property-dispute-lawyer.html">Real Estate & Property Law</a></li>
-                    <li><a class="dropdown-item" href="./criminal-law.html">Criminal Defense</a></li>
-                    <li><a class="dropdown-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a></li>
-                </ul>
-            </div>
-            
-            <a href="lawfirm-blog.html" class="nav-link-custom">Blog</a>
-            <a href="index.html#contact" class="nav-link-custom">Contact</a>
-        </div>
 
-        <div class="d-flex align-items-center gap-3">
-            <div class="cta d-none d-sm-block">
-                <a href="index.html#contact" class="btn btn-gold">Book Consultation</a>
-            </div>
-            <button class="btn text-white d-lg-none fs-3 p-0" id="menuToggle">
-                <i class="fa fa-bars"></i>
-            </button>
-        </div>
-    </nav>
-</header>
+                <div class="d-none d-lg-flex align-items-center ms-auto">
+                    <div class="dropdown">
+                        <a
+                            class="nav-link-custom border-0 bg-transparent p-0"
+                            href="# "
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Home
+                        </a>
+                    </div>    
 
-<div class="mobile-menu" id="mobileMenu">
-    <button class="close-menu" id="closeMenu">✕</button>
-    <div class="mt-5">
-        <a href="index.html" class="mobile-link">Home</a>
-        <div class="dropdown">
-            <a class="mobile-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Practice Areas</a>
-            <ul class="dropdown-menu dropdown-menu-dark bg-dark border-0">
-                <li><a class="dropdown-item" href="./civil-lawyer.html">Civil litigation</a></li>
-                <li><a class="dropdown-item" href="./property-dispute-lawyer.html">Real Estate & Property Law</a></li>
-                <li><a class="dropdown-item" href="./criminal-law.html">Criminal Defense</a></li>
-                <li><a class="dropdown-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a></li>
-            </ul>
+                    <div class="dropdown">
+                        <a
+                            class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0"
+                            href="practiceareas.html"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Practice Areas
+                        </a>
+                        <ul class="dropdown-menu shadow-lg">
+                            <li>
+                                <a class="dropdown-item" href="./civil-lawyer.html">Civil litigation</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./property-dispute-lawyer.html">Real Estate & Property Law</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./criminal-law.html">Criminal Defense</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./family-law.html">Family Law</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./corporate-law.html">Corporate Law</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <a
+                            class="nav-link-custom border-0 bg-transparent p-0"
+                            href="lawfirm-blog.html"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Blog
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a
+                            class="nav-link-custom border-0 bg-transparent p-0"
+                            href="index.html#contact"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center gap-3">
+                    <div class="cta d-none d-sm-block">
+                        <a href="index.html#contact" class="btn btn-gold">Book Consultation</a>
+                    </div>
+                    <button class="btn text-white d-lg-none fs-3 p-0" id="menuToggle">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <button class="close-menu" id="closeMenu">✕</button>
+            <div class="mt-5">
+                <a href="index.html" class="mobile-link">Home</a>
+                <div class="dropdown">
+                    <a class="mobile-link dropdown-toggle text-start" href="practiceareas.html" data-bs-toggle="dropdown">Practice Areas</a>
+                    <ul class="dropdown-menu dropdown-menu-dark bg-dark border-0">
+                        <li>
+                            <a class="dropdown-item" href="./civil-lawyer.html">Civil litigation</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./property-dispute-lawyer.html">Real Estate & Property Law</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./criminal-law.html">Criminal Defense</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./family-law.html">Family Law</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./corporate-law.html">Corporate Law</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="lawfirm-blog.html" class="mobile-link">Blog</a>
+                <a href="index.html#contact" class="mobile-link">Contact</a>
+                <div class="mt-4">
+                    <a href="index.html#contact" class="btn btn-gold w-100 py-3 text-center">Book Consultation</a>
+                </div>
+            </div>
         </div>
-        <a href="lawfirm-blog.html" class="mobile-link">Blog</a>
-        <a href="index.html#contact" class="mobile-link">Contact</a>
-        <div class="mt-4">
-            <a href="index.html#contact" class="btn btn-gold w-100 py-3 text-center">Book Consultation</a>
-        </div>
-    </div>
-</div>
         <br>
         <br>
         <div class="header-content">
