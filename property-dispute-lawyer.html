@@ -608,6 +608,45 @@
                     pointer-events: none; 
                 }
             }
+            /* Custom Mobile Sidebar Styles */
+.m-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: block;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    width: 100%;
+    text-align: left;
+}
+
+.m-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.m-submenu {
+    display: none; /* Hidden by default */
+    background: rgba(255, 255, 255, 0.05);
+    padding-left: 20px;
+}
+
+.m-submenu.active {
+    display: block; /* Shown when toggled */
+}
+
+.m-sub-item {
+    display: block;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    padding: 10px 0;
+    font-size: 0.95rem;
+}
+
+.m-sub-item:hover {
+    color: #c9a24d;
+}
         </style>
     </head>
     <body>
@@ -668,39 +707,32 @@
         </header>
 
         <div class="mobile-menu" id="mobileMenu">
-            <button class="close-menu" id="closeMenu">✕</button>
-            <div class="mt-5">
-                <a href="index.html" class="mobile-link">Home</a>
-                <div class="dropdown">
-                    <a class="mobile-link dropdown-toggle" href="practiceareas.html" data-bs-toggle="dropdown">Practice Areas</a>
-                    <ul class="dropdown-menu dropdown-menu-dark bg-dark border-0">
-                        <li>
-                            <a class="dropdown-item" href="./civil-lawyer.html">Civil litigation</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="./property-dispute-lawyer.html">Real Estate & Property Law</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="./criminal-law.html">Criminal Defense</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="./family-law.html">Family Law</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="./corporate-law.html">Corporate Law</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a>
-                        </li>
-                    </ul>
-                </div>
-                <a href="lawfirm-blog.html" class="mobile-link">Blog</a>
-                <a href="index.html#contact" class="mobile-link">Contact</a>
-                <div class="mt-4">
-                    <a href="index.html#contact" class="btn btn-gold w-100 py-3 text-center">Book Consultation</a>
-                </div>
+    <button class="close-menu" id="closeMenu">✕</button>
+    <div class="mt-5">
+        <a href="index.html" class="m-link">Home</a>
+
+        <div class="m-dropdown">
+            <a class="m-link m-trigger" href="practiceareas.html">
+                Practice Areas <i class="fa fa-chevron-down ms-2"></i>
+            </a>
+            <div class="m-submenu" id="mPracticeMenu">
+                <a class="m-sub-item" href="./civil-lawyer.html">Civil litigation</a>
+                <a class="m-sub-item" href="./property-dispute-lawyer.html">Real Estate & Property Law</a>
+                <a class="m-sub-item" href="./criminal-law.html">Criminal Defense</a>
+                <a class="m-sub-item" href="./family-law.html">Family Law</a>
+                <a class="m-sub-item" href="./corporate-law.html">Corporate Law</a>
+                <a class="m-sub-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a>
             </div>
         </div>
+
+        <a href="lawfirm-blog.html" class="m-link">Blog</a>
+        <a href="index.html#contact" class="m-link">Contact</a>
+
+        <div class="mt-4">
+            <a href="index.html#contact" class="btn btn-gold w-100 py-3 text-center">Book Consultation</a>
+        </div>
+    </div>
+</div>
 
         <section class="page-header-section container">
             <h1 class="section-title">Property Dispute Lawyer</h1>
@@ -924,6 +956,126 @@
 
             </div>
         </footer>
+        <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenu = document.getElementById('closeMenu');
+
+    // 1. Open/Close Mobile Sidebar
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+        });
+    }
+    if (closeMenu) {
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+        });
+    }
+
+    // 2. Custom Mobile Dropdown Logic
+    const trigger = document.querySelector('.m-trigger');
+    const submenu = document.getElementById('mPracticeMenu');
+
+    if (trigger) {
+        trigger.addEventListener('click', function(e) {
+            if (!submenu.classList.contains('active')) {
+                e.preventDefault(); // Stop navigation on first click
+                submenu.classList.add('active');
+                this.querySelector('i').style.transform = 'rotate(180deg)';
+            }
+            // If already active, the link (practiceareas.html) will naturally follow.
+        });
+    }
+
+    // 3. FORCE NAVIGATION for all mobile links
+    const mobileLinks = document.querySelectorAll('.m-link, .m-sub-item');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const url = this.getAttribute('href');
+            // If it's a normal link (Home, Blog, Contact) and NOT the Practice Areas trigger
+            if (url && url !== '#' && !this.classList.contains('m-trigger')) {
+                window.location.href = url;
+            }
+        });
+    });
+    
+    // 4. Desktop Navigation (Clicking parent link)
+    const practiceDropdown = document.getElementById('practiceDropdown');
+    if (practiceDropdown) {
+        practiceDropdown.addEventListener('click', function() {
+            if (window.innerWidth > 992) {
+                window.location.href = this.getAttribute('href');
+            }
+        });
+    }
+});
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    // 1. Mobile Menu Sidebar Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenu = document.getElementById('closeMenu');
+
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            mobileMenu.classList.add('open');
+        });
+    }
+
+    if (closeMenu) {
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+        });
+    }
+
+    // 2. THE ULTIMATE LINK FIX
+    // Select all nav links that have an actual destination
+    const allLinks = document.querySelectorAll('.nav-link-custom, .mobile-link');
+    
+    allLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            const destination = this.getAttribute('href');
+            
+            // If it's a real URL (not just #) and not a mobile dropdown toggle
+            if (destination && destination !== '#' && !this.classList.contains('dropdown-toggle')) {
+                window.location.href = destination;
+            } 
+            // If it's the Practice Areas link on Desktop, force navigation
+            else if (this.id === 'practiceDropdown' && window.innerWidth > 992) {
+                window.location.href = destination;
+            }
+        });
+    });
+});
+</script>
+<script>
+            document.addEventListener('DOMContentLoaded', function() {
+    // Force direct navigation for desktop links
+    if (window.innerWidth > 992) {
+        const links = document.querySelectorAll('.nav-link-custom');
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href !== '#' && !this.classList.contains('dropdown-toggle')) {
+                    window.location.href = href;
+                }
+            });
+        });
+
+        // Special case for Practice Areas clickable parent
+        const practiceBtn = document.getElementById('practiceDropdown');
+        if (practiceBtn) {
+            practiceBtn.addEventListener('click', function() {
+                window.location.href = "practiceareas.html";
+            });
+        }
+    }
+});
+</script>
         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 const menuToggle = document.getElementById('menuToggle');
