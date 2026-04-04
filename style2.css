@@ -155,4 +155,30 @@
 .m-submenu::-webkit-scrollbar {
     display: none;
 }
+.glass-container {
+    /* The semi-transparent background */
+    background: rgba(255, 255, 255, 0.174); 
+    
+    /* The blur effect (Frosted Glass) */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Support for Safari */
+    
+    /* Styling to define the glass edges */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    
+    /* Shadow to give it depth */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    
+    /* Centering logic (optional based on your layout) */
+    display: inline-block;
+    max-width: 800px;
+    padding: 4px 0 4px ;
+}
 
+/* Ensure the subtext inside remains bright enough */
+.rrc-subtext {
+    font-family: playfair-display, serif;
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(15, 15, 15, 0.5);
+}

@@ -847,23 +847,23 @@
                         </a>
                         <ul class="dropdown-menu shadow-lg">
                             <li>
-                                <a class="dropdown-item" href="./civil-lawyer.html">Civil litigation</a>
+                                <a class="dropdown-item" href="./property-disputes.html">Property Dispute</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="./property-dispute-lawyer.html">Real Estate & Property Law</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="./criminal-law.html">Criminal Defense</a>
+                                <a class="dropdown-item" href="family-law.html">Family Law</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="./family-law.html">Family Law</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="./corporate-law.html">Corporate Law</a>
+                                <a class="dropdown-item" href="./criminal-defense.html">Criminal Defense</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a>
                             </li>
+                            <li>
+                                <a class="dropdown-item" href="./corporate-law.html">Corporate Law</a>
+                            </li> 
                         </ul>
                     </div>
                     <div class="dropdown mx-3 mega-dropdown-static">
@@ -951,12 +951,12 @@
                         Practice Areas <i class="fa fa-chevron-down ms-2"></i>
                     </a>
                     <div class="m-submenu" id="mPracticeMenu">
-                        <a class="m-sub-item" href="./civil-lawyer.html">Civil litigation</a>
-                        <a class="m-sub-item" href="./property-dispute-lawyer.html">Real Estate & Property Law</a>
-                        <a class="m-sub-item" href="./criminal-law.html">Criminal Defense</a>
+                        <a class="m-sub-item" href="./property-disputes.html">Property Dispute</a>
+                        <a class="m-sub-item" href="./property-lawyer.html">Real Estate & Property Law</a>
                         <a class="m-sub-item" href="./family-law.html">Family Law</a>
-                        <a class="m-sub-item" href="./corporate-law.html">Corporate Law</a>
+                        <a class="m-sub-item" href="./criminal-defense.html">Criminal Defense</a>
                         <a class="m-sub-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a>
+                        <a class="m-sub-item" href="./corporate-law.html">Corporate Law</a>
                     </div>
                 </div>
                 <div class="m-dropdown">
@@ -1287,71 +1287,71 @@ mobileTriggers.forEach(trigger => {
         });
     }
 });
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-    // 1. Mobile Menu Sidebar Toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const closeMenu = document.getElementById('closeMenu');
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+            // 1. Mobile Menu Sidebar Toggle
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const closeMenu = document.getElementById('closeMenu');
 
-    if (menuToggle && mobileMenu) {
-        menuToggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            mobileMenu.classList.add('open');
-        });
-    }
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    mobileMenu.classList.add('open');
+                });
+            }
 
-    if (closeMenu) {
-        closeMenu.addEventListener('click', () => {
-            mobileMenu.classList.remove('open');
-        });
-    }
+            if (closeMenu) {
+                closeMenu.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                });
+            }
 
-    // 2. THE ULTIMATE LINK FIX
-    // Select all nav links that have an actual destination
-    const allLinks = document.querySelectorAll('.nav-link-custom, .mobile-link');
-    
-    allLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-            const destination = this.getAttribute('href');
+            // 2. THE ULTIMATE LINK FIX
+            // Select all nav links that have an actual destination
+            const allLinks = document.querySelectorAll('.nav-link-custom, .mobile-link');
             
-            // If it's a real URL (not just #) and not a mobile dropdown toggle
-            if (destination && destination !== '#' && !this.classList.contains('dropdown-toggle')) {
-                window.location.href = destination;
-            } 
-            // If it's the Practice Areas link on Desktop, force navigation
-            else if (this.id === 'practiceDropdown' && window.innerWidth > 992) {
-                window.location.href = destination;
+            allLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    const destination = this.getAttribute('href');
+                    
+                    // If it's a real URL (not just #) and not a mobile dropdown toggle
+                    if (destination && destination !== '#' && !this.classList.contains('dropdown-toggle')) {
+                        window.location.href = destination;
+                    } 
+                    // If it's the Practice Areas link on Desktop, force navigation
+                    else if (this.id === 'practiceDropdown' && window.innerWidth > 992) {
+                        window.location.href = destination;
+                    }
+                });
+            });
+        });
+        </script>
+        <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+            // Force direct navigation for desktop links
+            if (window.innerWidth > 992) {
+                const links = document.querySelectorAll('.nav-link-custom');
+                links.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        const href = this.getAttribute('href');
+                        if (href && href !== '#' && !this.classList.contains('dropdown-toggle')) {
+                            window.location.href = href;
+                        }
+                    });
+                });
+
+                // Special case for Practice Areas clickable parent
+                const practiceBtn = document.getElementById('practiceDropdown');
+                if (practiceBtn) {
+                    practiceBtn.addEventListener('click', function() {
+                        window.location.href = "practiceareas.html";
+                    });
+                }
             }
         });
-    });
-});
-</script>
-<script>
-            document.addEventListener('DOMContentLoaded', function() {
-    // Force direct navigation for desktop links
-    if (window.innerWidth > 992) {
-        const links = document.querySelectorAll('.nav-link-custom');
-        links.forEach(link => {
-            link.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href && href !== '#' && !this.classList.contains('dropdown-toggle')) {
-                    window.location.href = href;
-                }
-            });
-        });
-
-        // Special case for Practice Areas clickable parent
-        const practiceBtn = document.getElementById('practiceDropdown');
-        if (practiceBtn) {
-            practiceBtn.addEventListener('click', function() {
-                window.location.href = "practiceareas.html";
-            });
-        }
-    }
-});
-</script>
+        </script>
         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 const menuToggle = document.getElementById('menuToggle');

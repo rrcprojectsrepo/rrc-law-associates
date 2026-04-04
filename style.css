@@ -1002,7 +1002,7 @@ p {
 /* practice section */
 /* Section */
 .practice {
-  padding: 50px 20px 70px;
+  padding: 4  0px 20px 50px;
 }
 
 .practice-sec {
@@ -1556,7 +1556,7 @@ p {
             background: var(--white) ;
             grid-template-columns: repeat(3, 1fr);
             gap: 2.5rem;
-            margin-bottom: 5rem;
+            margin-bottom: 1rem;
         }
 
         .blog-card {
@@ -2019,6 +2019,10 @@ p {
 .container-sec {
   max-width: 1200px;
   padding: auto;
+}
+
+.contact-section{
+  padding-top: auto;
 }
 
 .section-header {
@@ -2968,7 +2972,7 @@ p {
     ════════════════════════════════ */
     #philosophy {
       background: var(--white);
-      padding: 10px 0 100px;
+      padding: 40px 0 40px;
       position: relative;
       overflow: hidden;
     }
@@ -3185,7 +3189,7 @@ p {
     ════════════════════════════════ */
     #international {
       background: linear-gradient(170deg, #fdfbf7 0%, #f6f2ea 100%);
-      padding: 20px 0 90px;
+      padding: 30px 0 90px;
       position: relative;
       overflow: hidden;
     }
