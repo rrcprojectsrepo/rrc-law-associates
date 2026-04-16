@@ -1,0 +1,21 @@
+{
+    "name": "RRC Law Associates",
+    "short_name": "RRC Law",
+    "description": "Expert Legal Solutions for NRI Clients and Local Residents.",
+    "icons": [
+        {
+            "src": "./assets/images/logo.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/images/logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#000000",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "start_url": "/index.html"
+}
